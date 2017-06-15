@@ -98,4 +98,8 @@ with tf.Session() as sess:
             ave_loss = ave_loss + sess.run(loss, feed_dict={x: np.array([x_train[k]])})/(len(x_train))
         print ave_loss
 
+    print 'Weights and Biases post training:'
+    print sess.run(rbm_results['weights'])
+    print sess.run(rbm_results['bh'])
+    print sess.run(rbm_results['bv'])
     print 'TRAINING COMPLETED'
